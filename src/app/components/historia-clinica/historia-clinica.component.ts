@@ -37,8 +37,8 @@ export class HistoriaClinicaComponent implements OnInit {
   {
     let html = `Altura: ${historiaClinica.altura}<br>
     Peso: ${historiaClinica.peso}<br>
-    temperatura: ${historiaClinica.temperatura}<br>
-    presion: ${historiaClinica.presion}<br>`;
+    Temperatura: ${historiaClinica.temperatura}<br>
+    Presion: ${historiaClinica.presion}<br>`;
 
     historiaClinica.otros.forEach((element:any) => {
       console.log(element);
