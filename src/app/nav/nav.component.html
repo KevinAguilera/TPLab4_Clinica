@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" [routerLink]="['/bienvenida']">Clinica</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <div class="float-right">
+
+      <ul class="navbar-nav mx-auto" *ngIf="user; else login">
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link" (click)="onLogout()" [routerLink]="['auth/login']">Cerrar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/users/miPerfil']">{{ user.nombre }}<img src="{{ user.foto }}" width="25px" height="25px" style="margin-left: 15px;border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; border-top-right-radius: 50%; border-top-left-radius: 50%;" ></a>
+        </li>
+      </ul>
+
+      <ng-template #login>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['auth/login']">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['auth/registro']">Registrarse</a>
+          </li>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+</nav>

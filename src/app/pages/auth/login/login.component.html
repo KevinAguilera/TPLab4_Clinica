@@ -1,0 +1,59 @@
+
+<main class="text-center">
+  <section class="form-signin page-wrap">
+ 
+        <form @viniendo class="form-signin" [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+          <h2 class="form-signin-heading">Iniciá Sesión!</h2>
+          <br><br>
+          <input type="text" class="form-control" name="username" placeholder="Ingresá tu email" required="" autofocus="" formControlName="email" />
+          <br>
+          <input type="password" class="form-control" name="password" placeholder="Ingresá tu contraseña" required="" formControlName="password"/>
+          <br><br>
+          <button class="btn btn-lg btn-dark btn-block" type="submit">Iniciar sesión</button>
+          <br><br>
+          <a [routerLink]="['/auth/registro']">No tenes cuenta? Registrate!</a>
+        </form>
+
+<ngx-spinner [type]="'ball-clip-rotate-multiple'"></ngx-spinner>
+
+
+
+
+
+     
+
+
+      <div @yendo class="opa mt-4" >
+        <div  style="   display: flex;justify-content: space-between;" class="" >
+          <div>
+            <img src="../../../assets/pacienteUno.jpg" (click)="seleccionarUsuario('pacienteUnoo@outlook.com', '123123')" class='imgRedonda ml-1 mr-1'alt="">
+            <p>Paciente Uno</p>
+          </div>
+          <div>
+            <img src="../../../assets/pacienteDos.jpg"(click)="seleccionarUsuario('pacienteDoos@outlook.com', '123123')" class='imgRedonda ml-1 mr-1'>
+            <p>Paciente Dos</p>
+          </div>
+          <div>
+            <img src="../../../assets/pacienteTres.jpg" (click)="seleccionarUsuario('pacienteTres@outlook.com', '123123')" class='imgRedonda ml-1 mr-1' alt="">
+            <p>Paciente Tres</p>
+          </div>
+          <div>
+            <img src="../../../assets/especialistaUno.jpg"(click)="seleccionarUsuario('especialistaUno@outlook.com', '123123')" class='imgRedonda ml-1 mr-1' alt="">
+            <p>Especialista Uno</p>
+          </div>
+          <div>
+            <img src="../../../assets/especialistaDos.jpg"(click)="seleccionarUsuario('especialistaDos@outlook.com', '123123')" class='imgRedonda ml-1 mr-1' alt="">
+            <p>Especialista Dos</p>
+          </div>
+         <div>
+           <img src="../../../assets/administrador.jpg" (click)="seleccionarUsuario('kevaaguilera@gmail.com', '123123')" class='imgRedonda ml-1 mr-1' alt="">
+           <p>Administrador</p>
+         </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  
+  

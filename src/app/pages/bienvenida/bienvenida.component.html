@@ -1,0 +1,53 @@
+<main role="main">
+  <body>
+  <div class="jumbotron fondo">
+    <div class="container">
+      <br><br>
+      <h1 class="display-3">Clínica OnLine, Especialista en Salud</h1>
+      <br><br>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-3" style="text-align: center;" *ngIf="usuarioActual == null">
+        <h2 style="text-align: center;">Inicie Sesión</h2>
+        <button class="btn btn-info" (click)="iniciarSesion()">Iniciar Sesión</button>
+      </div>
+      <div class="col-9" style="text-align: center;" *ngIf="usuarioActual == null">
+        <h2 style="text-align: center;">Registrarse</h2>
+        <button class="btn btn-info" (click)="registrarse()">Registrarse</button>
+      </div>
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil != 'administrador'">
+          <h2 style="text-align: center;">Mis Turnos</h2>
+          <button class="btn btn-info" (click)="misTurnos()">Ver Turnos</button>
+        </div>
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil == 'administrador'">
+          <h2 style="text-align: center;">Turnos</h2>
+          <button class="btn btn-info" (click)="turnos()">Ver Turnos</button>
+        </div>
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil != 'especialista'">
+          <h2 style="text-align: center;" >Solicitar Turno</h2>
+          <button class="btn btn-info" (click)="solicitarTurno()">Pedir Turno</button>
+        </div>
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil == 'especialista'">
+          <h2 style="text-align: center;" >Pacientes</h2>
+          <button class="btn btn-info" (click)="pacientes()">Ver Pacientes</button>
+        </div>
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil == 'administrador'">
+          <h2 style="text-align: center;" >Usuarios</h2>
+          <button class="btn btn-info" (click)="usuarios()">Ver usuarios</button>
+        </div>
+       <!-- <div class="col-3" style="text-align: center;" *ngIf="usuarioActual.perfil == 'administrador'">
+          <h2 style="text-align: center;" >Reportes</h2>
+          <button class="btn btn-info" (click)="reportes()">Ver reportes</button>
+        </div>-->
+        <div class="col-3" style="text-align: center;" *ngIf="usuarioActual">
+          <h2 style="text-align: center;">Mi Perfil</h2>
+          <button class="btn btn-info" (click)="miPerfil()">Ver mi Perfil</button>
+        </div>
+      </div>
+    </div> 
+  </body>
+  </main>
+
