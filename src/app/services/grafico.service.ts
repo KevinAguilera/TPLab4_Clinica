@@ -13,7 +13,8 @@ export class GraficoService {
   {
     return new Chart({
       chart:{
-        type:'bar'
+        type:'bar',
+        backgroundColor: 'gray'
       },
       title:{
         text:titulo
@@ -53,6 +54,7 @@ export class GraficoService {
           floating: true,
           borderWidth: 1,
           shadow: true
+          
       },
       credits: {
           enabled: false
@@ -60,6 +62,65 @@ export class GraficoService {
       series: [
         {
           type:'bar',
+          data: param2,
+        }
+      ]
+    });
+  }
+
+  crearGraficoTorta(param1:any, param2:any, titulo:string, xAxisTitle:string, yAxisTitle:string, sufijo:string)
+  {
+    return new Chart({
+      chart:{
+        type:'pie',
+        backgroundColor: 'gray'
+      },
+      title:{
+        text:titulo
+      },
+      xAxis:{
+        categories:param1,
+        title:{
+          text:xAxisTitle
+        }
+      },
+      yAxis:{
+        min:0,
+        title:{
+          text:yAxisTitle,
+          align:'high'
+        },
+        labels:{
+          overflow:'justify'
+        }
+      },
+      tooltip: {
+        valueSuffix: ' '+sufijo
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          shadow: true
+          
+      },
+      credits: {
+          enabled: false
+      },
+      series: [
+        {
+          type:'pie',
           data: param2,
         }
       ]

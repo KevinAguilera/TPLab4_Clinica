@@ -86,7 +86,7 @@ export class ReporteTurnosDiasComponent implements OnInit {
       cantidad.push(element.cant);
     });
 
-    this.chart = this.grafico.crearGraficoBarras(fechas, cantidad, 'Turnos solicitados por fecha', 'Fechas', 'Cantidad de turnos', 'turnos');
+    this.chart = this.grafico.crearGraficoTorta(fechas, cantidad, 'Turnos solicitados por fecha', 'Fechas', 'Cantidad de turnos', 'turnos');
   }
 
   Descargar()

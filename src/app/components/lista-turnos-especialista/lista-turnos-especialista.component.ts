@@ -139,6 +139,7 @@ export class ListaTurnosEspecialistaComponent implements OnInit {
         </div>
         </div>
         `,
+        background: 'teal',
         confirmButtonText: 'Enviar',
         focusConfirm: false,
         preConfirm: () => {

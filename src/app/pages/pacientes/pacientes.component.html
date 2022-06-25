@@ -60,7 +60,7 @@
 <!-- ESPECIALISTA -->
 <div class="container" *ngIf="usuarioActual.perfil == 'especialista' && !pacienteSeleccionado">
   <div class="row row-conEspecialista">
-    <h1>Elegir paciente:</h1>
+    <h1>Pacientes</h1>
       <ng-container *ngFor="let paciente of misPacientes">
         <div class="container-esp" (click)="verUsuario(paciente)">
           <div class="card-inner" >
@@ -124,7 +124,7 @@
 <div class="container" *ngIf="usuarioActual.perfil == 'especialista' && pacienteSeleccionado">
   <div class="row">
     <div class="col-md-3">
-      <button class="btn btn-primary" (click)="quitarDetalles()">Volver</button>
+      <!--<button class="btn btn-primary" (click)="quitarDetalles()">Volver</button>-->
       <div class="card">
         <span class="border border"></span>
         <img [src]="pacienteSeleccionado.foto" width="300px" class="img-fluid" />
@@ -157,6 +157,7 @@
               <td>
                 <div class="row">
                   <button class="btn btn-info" (click)="verDetalles(historia)">Detalle</button>
+                  
                 </div>
               </td>
             </tr>

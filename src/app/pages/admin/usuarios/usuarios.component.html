@@ -29,12 +29,43 @@
           <app-lista-pacientes></app-lista-pacientes>
         </div>
       </div>
+
+ 
+      <div class="container" >
+      <div  style="   display: flex;justify-content: space-between;" class="" >
+        <div>
+          <img appAgrandar src="../../../assets/pacienteUno.jpg" class='img-esp' (click)="descargarExcelDos()">
+          <p>Natalia Acevedo</p>
+        </div>
+        <div>
+          <img appAgrandar src="../../../assets/pacienteDos.jpg" class='img-esp'(click)="descargarExcelTres()">
+          <p>Damian dsasad</p>
+        </div>
+        <div>
+          <img appAgrandar src="../../../assets/pacienteTres.jpg" class='img-esp'>
+          <p>Melina Agra</p>
+        </div>
+        <div>
+          <img src="../../../assets/especialistaUno.jpg"class='img-esp' (click)="descargarExcelCuatro()">
+          <p>Jorge Posadas</p>
+        </div>
+        <div>
+          <img src="../../../assets/especialistaDos.jpg"class='img-esp'>
+          <p>Mauricio Gareca</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+      
       <div class="row">
         <div class="col-3 offset-5">
-          <button class="btn btn-success" (click)="descargarExcel()">Descargar Excel de usuarios</button>
+          <button class="btn btn-success text-align" (click)="descargarExcel()">Descargar Excel de usuarios</button>
         </div>
       </div>
       <hr>
-    </div> <!-- /container -->
+    </div> 
   </main>
 

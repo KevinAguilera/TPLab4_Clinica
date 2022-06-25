@@ -24,10 +24,11 @@ import { ReporteTurnosEspecialidadComponent } from 'src/app/components/reportes/
 import { ReporteTurnosDiasComponent } from 'src/app/components/reportes/reporte-turnos-dias/reporte-turnos-dias.component';
 import { ReporteTurnosSeleccionadosComponent } from 'src/app/components/reportes/reporte-turnos-seleccionados/reporte-turnos-seleccionados.component';
 import { ReporteTurnosFinalizadosComponent } from 'src/app/components/reportes/reporte-turnos-finalizados/reporte-turnos-finalizados.component';
-import { FechaDirectivaDirective } from 'src/app/directivas/fecha-directiva.directive';
-import { SoloNumerosDirective } from 'src/app/directivas/solo-numeros.directive';
-import { LargoMaximoDirective } from 'src/app/directivas/largo-maximo.directive';
 import { ChartModule } from 'angular-highcharts';
+import { AgrandarDirective } from 'src/app/directivas/agrandar.directive';
+import { PasarCursorDirective } from 'src/app/directivas/pasar-cursor.directive';
+
+
 
 
 @NgModule({
@@ -44,9 +45,9 @@ import { ChartModule } from 'angular-highcharts';
     ReporteTurnosDiasComponent,
     ReporteTurnosSeleccionadosComponent,
     ReporteTurnosFinalizadosComponent,
-    FechaDirectivaDirective,
-    SoloNumerosDirective,
-    LargoMaximoDirective,
+    AgrandarDirective,
+    PasarCursorDirective,
+  
 
     // FechaPipe,
     // TurnoExistentePipe,

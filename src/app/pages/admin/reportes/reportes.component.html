@@ -4,33 +4,65 @@
     <div class="jumbotron fondo">
       <div class="container">
         <br><br>
-        <h1 class="display-3"> Reportes:</h1>
+        <h1 class="display-3" style="text-align: center;"> Informes</h1>
         <br><br>
       </div>
     </div>
 
     <div class="container">
-      <div class="row" style="text-align: center;" *ngIf="!reporteSeleccionado">
-        <div class="col-3" style="text-align: center;">
-          <h2 style="text-align: center;" >Ingresos</h2>
-          <button class="btn btn-primary" (click)="verIngresos()">Ver Log de Ingresos</button>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <h2 style="text-align: center;" >Turnos por Especialidad</h2>
-          <button class="btn btn-primary" (click)="verTurnosEspecialidad()">Ver Turnos</button>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <h2 style="text-align: center;" >Turnos por Dia</h2>
-          <button class="btn btn-primary" (click)="verTurnosDia()">Ver Turnos</button>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <h2 style="text-align: center;" >Turnos por Medico</h2>
-          <button class="btn btn-primary" (click)="verTurnosSolicitados()">Ver Turnos</button>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <h2 style="text-align: center;" >Turnos finalizados por Medico</h2>
-          <button class="btn btn-primary" (click)="verTurnosFinalizados()">Ver Turnos</button>
-        </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" *ngIf="!reporteSeleccionado">
+          <div class="col user">
+              <div class="card shadow-sm">
+                  <div class="card-body">
+                      <img src="" width="50px">
+                      <h5>Ingresos al Sistema</h5><hr>
+                      <p>Información de todos los ingresos.
+                          <br>
+                      </p>
+                      <button class="btn btn-primary" (click)="verIngresos()">Ver Ingresos</button>
+                  </div>
+              </div>
+          </div> 
+              <div class="col user">
+                  <div class="card shadow-sm">
+                      <div class="card-body">
+                          <img src="" style="margin-top: 9px;" width="35px">
+                          <h5>Turnos por Especialidad</h5><hr>
+                          <p>Muestra  todos los turnos de la clínica por especialidad.</p><br>
+                          <button class="btn btn-primary" (click)="verTurnosEspecialidad()">Ver Turnos</button>
+                      </div>
+                  </div>
+              </div> 
+              <div class="col user">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <img src="" style="margin-top: 9px;" width="35px">
+                        <h5>Turnos por Día</h5><hr>
+                        <p>Muestra  todos los turnos de la clínica por día.</p><br>
+                        <button class="btn btn-primary" (click)="verTurnosDia()">Ver Turnos</button>
+                    </div>
+                </div>
+            </div> 
+            <div class="col user">
+              <div class="card shadow-sm">
+                  <div class="card-body">
+                      <img src="" style="margin-top: 9px;" width="35px">
+                      <h5>Turnos por Médico</h5><hr>
+                      <p>Muestra  todos los turnos de la clínica solicitados por médico.</p><br>
+                      <button class="btn btn-primary" (click)="verTurnosSolicitados()">Ver Turnos</button>
+                  </div>
+              </div>
+          </div> 
+          <div class="col user">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <img src="" style="margin-top: 9px;" width="35px">
+                    <h5>Turnos finalizados por Médico</h5><hr>
+                    <p>Muestra  todos los turnos de la clínica finalizados por médico.</p><br>
+                    <button class="btn btn-primary" (click)="verTurnosFinalizados()">Ver Turnos</button>
+                </div>
+            </div>
+        </div> 
       </div>
 
 
@@ -54,7 +86,7 @@
         <app-reporte-turnos-finalizados (cerrarTabla)="cerrarTabla($event)"></app-reporte-turnos-finalizados>
       </div>
       <hr>
-    </div> <!-- /container -->
+    </div> 
   </main>
 
 

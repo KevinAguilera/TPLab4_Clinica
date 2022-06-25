@@ -56,8 +56,8 @@ import { ReporteTurnosEspecialidadComponent } from './components/reportes/report
 import { ReporteTurnosDiasComponent } from './components/reportes/reporte-turnos-dias/reporte-turnos-dias.component';
 import { ReporteTurnosSeleccionadosComponent } from './components/reportes/reporte-turnos-seleccionados/reporte-turnos-seleccionados.component';
 import { ReporteTurnosFinalizadosComponent } from './components/reportes/reporte-turnos-finalizados/reporte-turnos-finalizados.component';
-import { SoloNumerosDirective } from './directivas/solo-numeros.directive';
-import { LargoMaximoDirective } from './directivas/largo-maximo.directive';
+
+
 
 @NgModule({
   declarations: [

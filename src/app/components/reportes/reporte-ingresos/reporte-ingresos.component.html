@@ -1,6 +1,11 @@
 <button class="btn btn-primary" (click)="volver()">Volver</button>
-<button class="btn btn-success">Descargar</button>
-<table class="table table-striped  mydatatable">
+<div class="wrapper">
+<button class="btn btn-success"  (click)="Descargar()">Descargar PDF</button>
+</div>
+
+<div id="htmlData">
+    <div *ngIf="mostrarTabla">
+<table appPasarCursor class="table table-warning mydatatable">
   <thead>
     <th>
       Usuario
@@ -15,7 +20,7 @@
   <tbody>
     <tr *ngFor="let ingreso of logIngresos">
       <td>
-        {{ingreso.idUsuario | nombreUsuario:listadoUsuarios}}
+        {{ingreso.mail}}
       </td>
       <td>
         {{ingreso.fecha}}
@@ -26,3 +31,7 @@
     </tr>
   </tbody>
 </table>
+</div>
+
+    <div [chart]="chart"></div>
+  </div>

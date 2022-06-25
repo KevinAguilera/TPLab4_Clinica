@@ -14,6 +14,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FechaPipe } from 'src/app/pipes/fecha.pipe';
 import { TurnoExistentePipe } from 'src/app/pipes/turno-existente.pipe';
+import { AgrandarGraficoDirective } from 'src/app/directivas/agrandar-grafico.directive';
+
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { TurnoExistentePipe } from 'src/app/pipes/turno-existente.pipe';
     AdministradorComponent,
     RegisterComponent,
     LoginComponent,
+    AgrandarGraficoDirective,
+  
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 .fondo{
   --background: none;
   width: 100%;
   background: url("../../../../assets/medical4.png") no-repeat center center / cover;
+}
+
+
+h1{
+	font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+}
+
+h5{
+    margin-top: 20px;
+}
+
+.user{
+    text-align: center; 
+    margin: auto;
+    margin-top: 15px;
+}
+
+button{
+    background: #05afaf;
+    color: white;
+    &:hover{
+        background: darken($color: #05afaf, $amount: 5);
+        color: white;
+    }
+    
+}
+.card-body{
+  background-color: #9981be;
 }

@@ -12,7 +12,7 @@ export class PdfService {
 
   descargarPdf(nombreArchivo:string, divImprimir:string)
   {
-    this.spinner.show();
+    //this.spinner.show();
 
     const DATA: any = document.getElementById(divImprimir);
     const doc = new jsPDF('p', 'pt', 'a4');

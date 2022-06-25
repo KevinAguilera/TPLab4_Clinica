@@ -54,7 +54,6 @@
   margin-right: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  background-color: white;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   height: 10rem;
   width: 15rem;
@@ -65,10 +64,11 @@
 //   color: white;
 // }
 .img-esp {
-  height: 6rem;
-  width: 6rem;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-  margin-top: 5px;
+	width: 125px;
+	height: 125px;
+	border-radius: 150px;
+	border: 6px solid rgb(130, 195, 214);
+	cursor: pointer;
 }
 .row-conEspecialista {
   text-align: center;

@@ -23,11 +23,9 @@ export class UsuariosComponent implements OnInit {
       usuariosSnapshot.forEach((usuarioData: any) => {
         let data = usuarioData.payload.doc.data();
         this.listaUsuarios.push({
-          id:data.id,
           nombre:data.nombre,
           apellido:data.apellido,
           edad:data.edad,
-          dni:data.dni,
           perfil:data.perfil});
       });
     });
@@ -102,6 +100,82 @@ export class UsuariosComponent implements OnInit {
 
 
     let fname="UsersData";
+
+    //add data and file name and download
+    workbook.xlsx.writeBuffer().then((data) => {
+      let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      fs.saveAs(blob, fname+'-'+new Date().valueOf()+'.xlsx');
+    });
+  }
+
+  descargarExcelDos()
+  {
+    let workbook = new Workbook();
+
+
+    let hojaPacientes = workbook.addWorksheet('Turnos y Especialista');
+    let pacientesHeader=['Turno','Nombre','Apellido', 'Especialista con el que se atendió'];
+    let pacientesHeaderDos=['1','Natala','Acevedo', 'Jorge Posadas'];
+ 
+    hojaPacientes.addRow(pacientesHeader);
+    hojaPacientes.addRow(pacientesHeaderDos);
+
+
+
+
+    let fname="Datos";
+
+    //add data and file name and download
+    workbook.xlsx.writeBuffer().then((data) => {
+      let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      fs.saveAs(blob, fname+'-'+new Date().valueOf()+'.xlsx');
+    });
+  }
+
+  descargarExcelTres()
+  {
+    let workbook = new Workbook();
+
+
+    let hojaPacientes = workbook.addWorksheet('Turnos y Especialista');
+    let pacientesHeader=['Turno','Nombre','Apellido', 'Especialista con el que se atendió'];
+    let pacientesHeaderDos=['1','Damian','dsasad', 'Jorge Posadas'];
+    let pacientesHeaderTres=['2','Damian','dsasad', 'Jorge Posadas'];
+ 
+    hojaPacientes.addRow(pacientesHeader);
+    hojaPacientes.addRow(pacientesHeaderDos);
+    hojaPacientes.addRow(pacientesHeaderTres);
+
+
+
+    let fname="Datos";
+
+    //add data and file name and download
+    workbook.xlsx.writeBuffer().then((data) => {
+      let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      fs.saveAs(blob, fname+'-'+new Date().valueOf()+'.xlsx');
+    });
+  }
+
+  descargarExcelCuatro()
+  {
+    let workbook = new Workbook();
+
+
+    let hojaPacientes = workbook.addWorksheet('Turnos y Pacientes');
+    let pacientesHeader=['Turno', 'Lista Pacientes atendidos'];
+    let pacientesHeaderDos=['1', 'Damian, asasad'];
+    let pacientesHeaderTres=['2','Damian, asasad'];
+    //let pacientesHeaderCuatro=['3','Damian, asasad'];
+
+    hojaPacientes.addRow(pacientesHeader);
+    hojaPacientes.addRow(pacientesHeaderDos);
+    hojaPacientes.addRow(pacientesHeaderTres);
+    //hojaPacientes.addRow(pacientesHeaderCuatro);
+
+
+
+    let fname="Datos";
 
     //add data and file name and download
     workbook.xlsx.writeBuffer().then((data) => {

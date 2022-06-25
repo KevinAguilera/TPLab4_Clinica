@@ -6,6 +6,7 @@ import { Paciente } from 'src/app/clases/paciente';
 import { AuthService } from 'src/app/services/auth.service';
 import { HistoriaMedicaService } from 'src/app/services/historia-medica.service';
 import { UsersService } from 'src/app/services/users.service';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -59,10 +60,14 @@ export class PacientesComponent implements OnInit {
 
   verDetalles(historiaClinica:any)
   {
-    let html = `Altura: ${historiaClinica.altura}<br>
+    let html =     
+    `Comentario: Buen Paciente <br>
+    Diagnostico: Sano 100% <br>
+    Altura: ${historiaClinica.altura}<br>
     Peso: ${historiaClinica.peso}<br>
-    temperatura: ${historiaClinica.temperatura}<br>
-    presion: ${historiaClinica.presion}<br>`;
+    Temperatura: ${historiaClinica.temperatura}<br>
+    Presion: ${historiaClinica.presion}<br>`;
+   
 
     historiaClinica.otros.forEach((element:any) => {
       console.log(element);
@@ -72,6 +77,7 @@ export class PacientesComponent implements OnInit {
     Swal.fire({
       title:'Historia Clinica Del Paciente',
       html:html,
+      background: 'teal',
     });
   }
 

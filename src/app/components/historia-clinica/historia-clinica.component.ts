@@ -3,6 +3,7 @@ import { HistoriaClinica } from 'src/app/clases/historiaClinica';
 import { AuthService } from 'src/app/services/auth.service';
 import { HistoriaMedicaService } from 'src/app/services/historia-medica.service';
 import { UsersService } from 'src/app/services/users.service';
+import { PdfService } from 'src/app/services/pdf.service';
 import Swal from 'sweetalert2';
 
 // import { Img, PdfMakeWrapper, Txt } from 'pdfmake-wrapper';
@@ -19,11 +20,12 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 })
 export class HistoriaClinicaComponent implements OnInit {
 
+  verHistClinica:boolean=true;
   historiasClinicas:HistoriaClinica[] = [];
   historiasFiltradas:HistoriaClinica[]=[];
   listadoEspecialistas:any[] = [];
   stringFiltro:string='';
-  constructor(private Users:UsersService, private historiaClinica:HistoriaMedicaService, private authSvc:AuthService) { }
+  constructor(private Users:UsersService, private historiaClinica:HistoriaMedicaService, private authSvc:AuthService, private pdf:PdfService) { }
 
   ngOnInit(): void {
     this.listadoEspecialistas = this.Users.listadoEspecialistas;
@@ -48,6 +50,7 @@ export class HistoriaClinicaComponent implements OnInit {
     Swal.fire({
       title:'Historia Clinica Del Paciente',
       html:html,
+      background: 'teal',
     });
   }
 
@@ -89,34 +92,31 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   async descargarPDF()
   {
+    this.verHistClinica=false
     let tabla = this.armarTablaHistoria();
     let docDefinition:any = {
       header: {
-        margin:5,
+        margin:10,
         columns: [
           {
             image: await this.getBase64ImageFromURL('../../../assets/clinica.png'),
-            width:45,
-            height:45,
+            width:50,
+            height:50,
             alignment: 'left'
           },
           {
-            text:'Clinica Online, Especialista en Salud',
-            alignment:'left',
+            text:'Clinica OnLine',
+            alignment:'center',
           },
           {
-            text:'Historia clinica de '+this.authSvc.currentUser.nombre,
-            alignment:'center'
-          },
-          {
-            text:'Fecha Emisión: '+new Date().toDateString(),
+            text:'Historia clinica de '+this.authSvc.currentUser.nombre+' - Fecha de emisión: '+new Date().toDateString(),
             alignment:'right'
           }
         ]
       },
       content:[
         {
-          margin:40,
+          margin:30,
           layout: 'lightHorizontalLines',
           table:{
             headerRows: 1,
@@ -131,9 +131,12 @@ export class HistoriaClinicaComponent implements OnInit {
       }
     }
 
-    pdfMake.createPdf(docDefinition).open();
+    this.verHistClinica=false
+    this.pdf.descargarPdf('historialMedico.pdf', 'htmlData');
+   this.verHistClinica=true;
+   
+    
   }
-
   getBase64ImageFromURL(url:any) {
     return new Promise((resolve, reject) => {
       var img = new Image();
