@@ -91,7 +91,8 @@ export class GraficoService {
           align:'high'
         },
         labels:{
-          overflow:'justify'
+          overflow:'justify',
+         
         }
       },
       tooltip: {
@@ -118,12 +119,52 @@ export class GraficoService {
       credits: {
           enabled: false
       },
-      series: [
-        {
-          type:'pie',
-          data: param2,
-        }
-      ]
-    });
-  }
-}
+      series: [{
+        type: 'pie',
+        data: [{
+            name: '27/6/2022',
+            y: 3,
+          }, {
+            name: '17/6/2022',
+            y: 2,
+          }, {
+            name: '18/6/2022',
+            y: 2,
+          },
+          {
+            name: '24/6/2022',
+            y: 4,
+          },
+          {
+            name: '1/7/2022',
+            y: 1,
+          },
+          {
+            name: '20/6/2022',
+            y: 2,
+          },
+          {
+            name: '15/6/2022',
+            y: 2,
+          },
+          {
+            name: '13/6/2022',
+            y: 1,
+          },
+          {
+            name: '10/6/2022',
+            y: 2,
+          },
+          {
+            name: '14/6/2022',
+            y: 1,
+          },
+        ],
+       
+    
+      
+          
+        
+      }]
+    
+    })}}
